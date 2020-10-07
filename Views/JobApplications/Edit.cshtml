@@ -1,0 +1,59 @@
+﻿@model TiengInClassWebApp.Models.JobApplication
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>JobApplication</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            @*<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="jobRequisitionNumber" />*@
+            <div class="form-group">
+                <label asp-for="jobRequisitionNumber" class="control-label"></label>
+                <input asp-for="jobRequisitionNumber" class="form-control" />
+                <span asp-validation-for="jobRequisitionNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="jobTitle" class="control-label"></label>
+                <input asp-for="jobTitle" class="form-control" />
+                <span asp-validation-for="jobTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="hiringCompany" class="control-label"></label>
+                <input asp-for="hiringCompany" class="form-control" />
+                <span asp-validation-for="hiringCompany" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="jobLocation" class="control-label"></label>
+                <input asp-for="jobLocation" class="form-control" />
+                <span asp-validation-for="jobLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="applicationSubmissionDate" class="control-label"></label>
+                <input asp-for="applicationSubmissionDate" class="form-control" />
+                <span asp-validation-for="applicationSubmissionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="applicationNotes" class="control-label"></label>
+                <input asp-for="applicationNotes" class="form-control" />
+                <span asp-validation-for="applicationNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

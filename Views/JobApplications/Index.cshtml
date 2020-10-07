@@ -1,0 +1,64 @@
+﻿@model IEnumerable<TiengInClassWebApp.Models.JobApplication>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h4>Jobs you applied for</h4>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.jobRequisitionNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.jobTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.hiringCompany)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.jobLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.applicationSubmissionDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.applicationNotes)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.jobRequisitionNumber)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.jobTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hiringCompany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.jobLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.applicationSubmissionDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.applicationNotes)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.jobRequisitionNumber">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.jobRequisitionNumber">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.jobRequisitionNumber">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

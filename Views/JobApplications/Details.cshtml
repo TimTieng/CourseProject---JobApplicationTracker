@@ -1,0 +1,45 @@
+﻿@model TiengInClassWebApp.Models.JobApplication
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Submitted Application Details</h1>
+
+<div>
+    <h4>JobApplication</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.jobTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.jobTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.hiringCompany)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.hiringCompany)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.jobLocation)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.jobLocation)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.applicationSubmissionDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.applicationSubmissionDate)
+        </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.applicationNotes)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.jobRequisitionNumber">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
